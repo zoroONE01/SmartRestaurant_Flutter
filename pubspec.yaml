@@ -1,0 +1,30 @@
+name: smart_restaurant_flutter
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.17.6 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.6.5
+  flutter: 
+    sdk: flutter
+  google_fonts: ^3.0.1
+  flutter_svg: ^1.1.1+1
+  simple_shadow: ^0.3.0
+  blur: ^3.1.0
+
+dev_dependencies: 
+  flutter_lints: ^2.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/2x/
+    - assets/images/3x/
+    - assets/svg/
+
