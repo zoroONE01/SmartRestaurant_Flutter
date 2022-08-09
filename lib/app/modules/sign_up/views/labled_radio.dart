@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:smart_restaurant_flutter/app/data/constants/app_colors.dart';
+import 'package:get/get.dart';
+import 'package:smart_restaurant_flutter/app/data/extensions/context_x.dart';
 
 class LabeledRadio extends StatefulWidget {
   const LabeledRadio({
@@ -36,7 +36,7 @@ class _LabeledRadioState extends State<LabeledRadio> {
         child: Row(
           children: <Widget>[
             Radio<int>(
-              activeColor: AppColors.yellowOrange,
+              activeColor: context.colors.primary,
               groupValue: widget.groupValue,
               value: widget.value,
               onChanged: (int? newValue) {
@@ -45,10 +45,14 @@ class _LabeledRadioState extends State<LabeledRadio> {
                 });
               },
             ),
-            Text(widget.label, style: GoogleFonts.comfortaa(
+            Text(
+              widget.label,
+              style: context.textTheme.bodyLarge?.copyWith(
                 fontWeight: FontWeight.w700,
-                color: AppColors.blackEerie,
-                fontSize: 16),),
+                color: context.colors.onSurface,
+                fontSize: 14,
+                ),
+            ),
           ],
         ),
       ),
