@@ -40,17 +40,17 @@ class FormProfile extends GetView<SignUpController> {
                 ),
                 Container(
                   margin: const EdgeInsets.only(
-                      top: 20, right: 20, bottom: 10, left: 20),
+                      top: 20, right: 20, bottom: 10, left: 40),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text('Giới tính',
                           style: context.textTheme.bodyLarge?.copyWith(
                             fontWeight: FontWeight.w700,
-                            color: context.colors.onSurfaceVariant,
+                            color: context.colors.onSurface,
                           )),
-                      const SizedBox(
-                        width: 20,
+                       SizedBox(
+                        width: context.mediaQuerySize.width * 0.01,
                       ),
                       LabeledRadio(
                         label: 'Nam',

@@ -1,25 +1,21 @@
 library providers;
 
-import 'package:smart_restaurant_flutter/app/data/models/account.dart';
-import 'package:smart_restaurant_flutter/app/data/models/models.dart';
-import 'package:smart_restaurant_flutter/app/data/models/profile.dart';
+import 'package:dio/dio.dart';
+import 'package:smart_restaurant_flutter/app/data/exceptions/exceptions.dart';
 
+import '../events/form_event.dart';
 import '../helpers/helpers.dart';
+import '../models/sign_in_model.dart';
+import '../models/sign_up_model.dart';
 
-part 'account_provider.dart';
+part 'sign_in_provider.dart';
 
-part 'profile_provider.dart';
+part 'sign_up_provider.dart';
 
 class Providers {
-  static AccountProvider get account => AccountProvider();
+  Providers._();
 
-  static ProfileProvider get profile => ProfileProvider();
+  static SignInProvider get signIn => SignInProvider();
 
-}
-
-abstract class ModelProvider<T extends Models> {
-
-  Future<T?> getById({required int id});
-
-  Future<List<T>?> getAll();
+  static SignUpProvider get signUp => SignUpProvider();
 }

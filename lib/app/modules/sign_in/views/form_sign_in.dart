@@ -40,7 +40,7 @@ class FormSignIn extends GetView<SignInController> {
                   title: Text(
                     'Ghi nhớ tài khoản',
                     style: context.textTheme.bodySmall?.copyWith(
-                      color: context.colors.onSurfaceVariant,
+                      color: context.colors.onSurface,
                     ),
                   ),
                   value: controller.isRememberMe.value,
@@ -70,8 +70,7 @@ class FormSignIn extends GetView<SignInController> {
                       //radius cho hiệu ứng
                       onTap: () {
                         if (_signInFormKey.currentState!.validate()) {
-                          // If the form is valid, display a snackbar. In the real world,
-                          // you'd often call a server or save the information in a database.
+                          controller.summit();
                         }
                       },
                       child: SizedBox(

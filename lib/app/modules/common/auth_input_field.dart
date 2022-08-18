@@ -4,15 +4,15 @@ import 'package:get/get.dart';
 import 'package:smart_restaurant_flutter/app/data/extensions/context_x.dart';
 
 class AuthInputField extends StatelessWidget {
-  const AuthInputField(
-      {Key? key,
-      required this.controller,
-      required this.label,
-      required this.hint,
-      required this.validator,
-      this.hideText = false,
-      this.isDigit = false})
-      : super(key: key);
+  const AuthInputField({
+    Key? key,
+    required this.controller,
+    required this.label,
+    required this.hint,
+    required this.validator,
+    this.hideText = false,
+    this.isDigit = false,
+  }) : super(key: key);
 
   final TextEditingController controller;
   final String label;
@@ -26,11 +26,11 @@ class AuthInputField extends StatelessWidget {
     // List<TextInputFormatter>?
     // isDigit ?
     return Container(
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       child: TextFormField(
         autovalidateMode: AutovalidateMode.onUserInteraction,
         controller: controller,
-        validator: validator,
+        // validator: validator,
         obscureText: hideText,
         inputFormatters: [
           isDigit
@@ -39,7 +39,7 @@ class AuthInputField extends StatelessWidget {
         ],
         style: context.textTheme.bodyLarge?.copyWith(
           fontWeight: FontWeight.w700,
-          color: context.colors.onSurface,
+          color: context.colors.secondary,
         ),
         decoration: InputDecoration(
           errorBorder: UnderlineInputBorder(
@@ -56,14 +56,14 @@ class AuthInputField extends StatelessWidget {
             label,
             style: context.textTheme.bodyLarge?.copyWith(
               fontWeight: FontWeight.w700,
-              color: context.colors.onSurfaceVariant,
+              color: context.colors.onSurface,
             ),
           ),
           hintText: hint,
           contentPadding: const EdgeInsets.symmetric(horizontal: 10),
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: context.colors.onSurfaceVariant,
+              color: context.colors.onSurface,
               width: 2,
             ),
           ),

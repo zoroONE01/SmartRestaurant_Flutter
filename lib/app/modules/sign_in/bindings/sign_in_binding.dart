@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:smart_restaurant_flutter/app/data/repositories/sign_in_repository.dart';
 import 'package:smart_restaurant_flutter/app/data/utils/utils.dart';
 import 'package:smart_restaurant_flutter/app/modules/sign_up/controllers/sign_up_controller.dart';
 
@@ -9,7 +8,7 @@ class SignInBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<SignInController>(
-      () => SignInController(accountRepository: SignInRepository()),
+      () => SignInController(),
     );
     Get.lazyPut<SignUpController>(
       () => SignUpController(),

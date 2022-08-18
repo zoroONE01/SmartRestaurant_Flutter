@@ -10,29 +10,34 @@ class ThemeManager with ChangeNotifier {
   factory ThemeManager() => _instance;
 
   final ColorScheme _lightColorScheme = ColorScheme.fromSeed(
-    seedColor: colorYellowOrange,
-    primary: colorYellowOrange,
-    error: colorFireOpalRed,
-    onSurfaceVariant: colorWebGrey,
-    brightness: Brightness.light,
-    secondary: colorYellowOrange,
-    secondaryContainer: colorOrganePumpkin,
-  );
+      seedColor: colorPrimary,
+      primary: colorPrimary,
+      onPrimary: colorSecondary,
+      error: colorError,
+      onSurfaceVariant: colorOnSurface,
+      brightness: Brightness.light,
+      tertiary: colorPrimary,
+      tertiaryContainer: colorPrimaryVar,
+      background: colorSecondary,
+      secondary: colorBackground,
+      secondaryContainer: Colors.white.withOpacity(0.9));
 
   final _darkColorScheme = ColorScheme.fromSeed(
-    seedColor: colorYellowOrange,
-    primary: colorYellowOrange,
-    onPrimary: colorRaisinBlack,
-    onPrimaryContainer: colorSonicSilver,
-    background: colorEerieBlack,
-    surface: colorRaisinBlack,
-    error: colorFireOpalRed,
-    onSurface: colorWhite,
-    onSurfaceVariant: colorWebGrey,
-    brightness: Brightness.dark,
-    secondary: colorEerieBlack,
-    secondaryContainer: colorEerieBlack,
-  );
+      seedColor: colorPrimary,
+      primary: colorPrimary,
+      onPrimary: colorBackground,
+      onPrimaryContainer: colorSurfaceVar,
+      secondary: colorSecondary,
+      background: colorBackground,
+      onBackground: colorOnBackground,
+      surface: colorSurface,
+      error: colorError,
+      onSurface: colorOnSurface,
+      onSurfaceVariant: colorSurfaceVar,
+      brightness: Brightness.dark,
+      tertiary: colorBackground,
+      tertiaryContainer: Colors.black,
+      secondaryContainer: Colors.black.withOpacity(0.9));
 
   ThemeData get lightTheme => ThemeData.light().copyWith(
         colorScheme: _lightColorScheme,
